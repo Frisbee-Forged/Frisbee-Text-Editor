@@ -12,8 +12,8 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff; /* Light background */
-    color: #000; /* Light text */
+    background-color: #fff; 
+    color: #000; 
 }
 
 /* Toolbar Styles */
@@ -26,12 +26,12 @@ body {
     margin-right: 5px;
     border: none;
     border-radius: 5px;
-    background-color: #f0f0f0; /* Light button */
+    background-color: #f0f0f0; 
     cursor: pointer;
 }
 
 #toolbar button:hover {
-    background-color: #e0e0e0; /* Light button hover */
+    background-color: #e0e0e0; 
 }
 
 /* Editor Styles */
@@ -40,8 +40,8 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff; /* Light background */
-    color: #000; /* Light text */
+    background-color: #fff; 
+    color: #000; 
 }
 
 #shortcuts-area {
@@ -49,8 +49,8 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff; /* Light background */
-    color: #000; /* Light text */
+    background-color: #fff; 
+    color: #000; 
 }
 
 /* Settings Menu Styles */
@@ -60,9 +60,9 @@ body {
     left: 50%;
     transform: translate(-50%, -20%);
     padding: 20px;
-    background-color: #fff; /* Light background */
+    background-color: #fff; 
     border-radius: 5px;
-    z-index: 1000; /* Ensure it is above other content */
+    z-index: 1000; 
 }
 #file-menu {
     position: fixed;
@@ -70,9 +70,9 @@ body {
     left: 50%;
     transform: translate(-50%, -20%);
     padding: 20px;
-    background-color: #fff; /* Light background */
+    background-color: #fff; 
     border-radius: 5px;
-    z-index: 1000; /* Ensure it is above other content */
+    z-index: 1000; 
 }
 #shortcuts-menu {
     position: fixed;
@@ -80,9 +80,9 @@ body {
     left: 50%;
     transform: translate(-50%, -20%);
     padding: 20px;
-    background-color: #fff; /* Light background */
+    background-color: #fff; 
     border-radius: 5px;
-    z-index: 1000; /* Ensure it is above other content */
+    z-index: 1000; /*zessir lol */
 }
 
 #example {
@@ -177,14 +177,14 @@ body {
     border: 3px solid #FFFFFF;
 }
 
-/* Button Styles for Dark Theme */
+/* Button Styles for Dark Theme! */
 .dark-theme #toolbar button {
-    background-color: #555; /* Dark button */
-    color: #fff; /* Dark button text */
+    background-color: #555; 
+    color: #fff; 
 }
 
 .dark-theme #toolbar button:hover {
-    background-color: #666666; /* Dark button hover */
+    background-color: #666666; /* EVKIL DARK BUTTON ?? */
 }
 
 .dark-theme #editor-container {
@@ -198,40 +198,40 @@ body {
   color: #FFFFFF;
 }
 
-.therian-theme {
+.darkred-theme {
     background-color: #580A0A;
     color: #260404;
 }
 
-.therian-theme #editor {
+.darkred-theme #editor {
     background-color: #4A0B0B;
     color: #FFFFFF;
 }
 
-.therian-theme #settings-menu {
+.darkred-theme #settings-menu {
     background-color: #240404;
     color: #FFFFFF;
     border: 3px solid #610000;
 }
 
 /* Button Styles for Dark Theme */
-.therian-theme #toolbar button {
-    background-color: #290505; /* Dark button */
-    color: #FFFFFF; /* Dark button text */
+.darkred-theme #toolbar button {
+    background-color: #290505;
+    color: #FFFFFF; 
 }
 
-.therian-theme #toolbar button:hover {
-    background-color: #250404; /* Dark button hover */
+.darkred-theme #toolbar button:hover {
+    background-color: #250404; 
 }
 
-.therian-theme #editor-container {
+.darkred-theme #editor-container {
   background-color: #300404;
   color: #FFFFFF;
 }
-.therian-theme #title {
+.darkred-theme #title {
   color: #FFFFFF;
 }
-.therian-theme #subtitle {
+.darkred-theme #subtitle {
   color: #FFFFFF;
 }
 
@@ -255,7 +255,7 @@ body {
     border: 3px solid #FFFFFF;
 }
 
-.therian-theme #file-menu {
+.darkred-theme #file-menu {
   background-color: #240404;
     color: #FFFFFF;
     border: 3px solid #610000;
@@ -266,17 +266,17 @@ body {
     margin: 5px;
     border: none;
     border-radius: 5px;
-    background-color: #f0f0f0; /* Light button */
+    background-color: #f0f0f0; 
     cursor: pointer;
 }
 
 .dark-theme #navbar ul{
-  background-color: #555; /* Dark button */
+  background-color: #555; 
     color: #fff; 
 }
 
-.therian-theme #navbar ul{
-  background-color: #290505; /* Dark button */
+.darkred-theme #navbar ul{
+  background-color: #290505; 
     color: #FFFFFF;
 }
 
@@ -292,7 +292,7 @@ body {
     border: 3px solid #FFFFFF;
 }
 
-.therian-theme #shortcuts-menu {
+.darkred-theme #shortcuts-menu {
   background-color: #240404;
     color: #FFFFFF;
     border: 3px solid #610000;
@@ -303,7 +303,7 @@ body {
     margin: 5px;
     border: none;
     border-radius: 5px;
-    background-color: #f0f0f0; /* Light button */
+    background-color: #f0f0f0; 
     cursor: pointer;
 }
 
@@ -315,6 +315,6 @@ body {
   color: white;
 }
 
-.therian-theme #navbae a {
+.darkred-theme #navbae a {
   color: white;
 }
