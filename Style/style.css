@@ -125,6 +125,7 @@ body {
 #navbar li {
   float: left;
   margin: 10px;
+  text-decoration: none;
 }
 
 #title {
@@ -315,6 +316,7 @@ body {
   color: white;
 }
 
-.darkred-theme #navbae a {
+.darkred-theme #navbar a {
   color: white;
+  text-decoration: none;
 }
