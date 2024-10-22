@@ -1,0 +1,320 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Editor Container */
+#editor-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Light background */
+    color: #000; /* Light text */
+}
+
+/* Toolbar Styles */
+#toolbar {
+    margin-bottom: 10px;
+}
+
+#toolbar button {
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Light button */
+    cursor: pointer;
+}
+
+#toolbar button:hover {
+    background-color: #e0e0e0; /* Light button hover */
+}
+
+/* Editor Styles */
+#editor {
+    min-height: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Light background */
+    color: #000; /* Light text */
+}
+
+#shortcuts-area {
+    min-height: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Light background */
+    color: #000; /* Light text */
+}
+
+/* Settings Menu Styles */
+#settings-menu {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    padding: 20px;
+    background-color: #fff; /* Light background */
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it is above other content */
+}
+#file-menu {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    padding: 20px;
+    background-color: #fff; /* Light background */
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it is above other content */
+}
+#shortcuts-menu {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    padding: 20px;
+    background-color: #fff; /* Light background */
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+#example {
+  color: dimgray;
+}
+/* Overlay Styles */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Initially hidden */
+}
+
+#navbar {
+  display: inline-flex;
+}
+#navbar ul{
+  list-style-type: none;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+    color: #000;
+}
+#navbar a{
+  padding: 10px 10px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   text-decoration: none;
+   text-align: center;
+}
+#navbar a:hover {
+  background-color: #C8C8C8;
+}
+#navbar li {
+  float: left;
+  margin: 10px;
+}
+
+#title {
+  padding: 15px 15px;
+  text-align: center;
+  font-size: 40px;
+}
+#subtitle {
+  text-align: center;
+  font-size: 20px;
+  border: 0px;
+}
+/* Light Theme Styles */
+.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+.light-theme #editor {
+    background-color: #fff;
+    color: #000;
+}
+
+.light-theme #settings-menu {
+    background-color: #fff;
+    border: 3px solid #000000;
+}
+
+.light-theme #title {
+  color: #000000;
+}
+.light-theme #subtitle {
+  color: #000000;
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme #editor {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-theme #settings-menu {
+    background-color: #444;
+    color: #fff;
+    border: 3px solid #FFFFFF;
+}
+
+/* Button Styles for Dark Theme */
+.dark-theme #toolbar button {
+    background-color: #555; /* Dark button */
+    color: #fff; /* Dark button text */
+}
+
+.dark-theme #toolbar button:hover {
+    background-color: #666666; /* Dark button hover */
+}
+
+.dark-theme #editor-container {
+  background-color: #444;
+  color: #fff;
+}
+.dark-theme #title {
+  color: #FFFFFF;
+}
+.dark-theme #subtitle {
+  color: #FFFFFF;
+}
+
+.therian-theme {
+    background-color: #580A0A;
+    color: #260404;
+}
+
+.therian-theme #editor {
+    background-color: #4A0B0B;
+    color: #FFFFFF;
+}
+
+.therian-theme #settings-menu {
+    background-color: #240404;
+    color: #FFFFFF;
+    border: 3px solid #610000;
+}
+
+/* Button Styles for Dark Theme */
+.therian-theme #toolbar button {
+    background-color: #290505; /* Dark button */
+    color: #FFFFFF; /* Dark button text */
+}
+
+.therian-theme #toolbar button:hover {
+    background-color: #250404; /* Dark button hover */
+}
+
+.therian-theme #editor-container {
+  background-color: #300404;
+  color: #FFFFFF;
+}
+.therian-theme #title {
+  color: #FFFFFF;
+}
+.therian-theme #subtitle {
+  color: #FFFFFF;
+}
+
+#file-menu #file-menu-exports {
+  padding: 10px 10px;
+   border: 1px solid;
+   border-radius: 5px;
+   cursor: pointer;
+   text-decoration: none;
+   text-align: center;
+}
+
+.light-theme #file-menu {
+  background-color: #fff;
+    border: 3px solid #000000;
+}
+
+.dark-theme #file-menu {
+  background-color: #444;
+    color: #fff;
+    border: 3px solid #FFFFFF;
+}
+
+.therian-theme #file-menu {
+  background-color: #240404;
+    color: #FFFFFF;
+    border: 3px solid #610000;
+}
+
+#file-menu button{
+  padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Light button */
+    cursor: pointer;
+}
+
+.dark-theme #navbar ul{
+  background-color: #555; /* Dark button */
+    color: #fff; 
+}
+
+.therian-theme #navbar ul{
+  background-color: #290505; /* Dark button */
+    color: #FFFFFF;
+}
+
+
+.light-theme #shortcuts-menu {
+  background-color: #fff;
+    border: 3px solid #000000;
+}
+
+.dark-theme #shortcuts-menu {
+  background-color: #444;
+    color: #fff;
+    border: 3px solid #FFFFFF;
+}
+
+.therian-theme #shortcuts-menu {
+  background-color: #240404;
+    color: #FFFFFF;
+    border: 3px solid #610000;
+}
+
+#shortcuts-menu button{
+  padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Light button */
+    cursor: pointer;
+}
+
+.light-theme #navbar a {
+  color: black;
+}
+
+.dark-theme #navbar a {
+  color: white;
+}
+
+.therian-theme #navbae a {
+  color: white;
+}

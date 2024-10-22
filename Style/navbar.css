@@ -1,0 +1,28 @@
+#navbar {
+  display: inline-flex;
+}
+#navbar ul{
+  list-style-type: none;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+    color: #000;
+}
+#navbar a{
+  padding: 10px 10px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   text-decoration: none;
+   text-align: center;
+}
+#navbar a:hover {
+  background-color: #C8C8C8;
+}
+#navbar li {
+  float: left;
+  margin: 10px;
+}
+
