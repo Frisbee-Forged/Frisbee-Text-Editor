@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frisbee Text Editor</title>
+  <link rel="stylesheet" href="frisbee 0.1/style/style.css">
+  <link rel="stylesheet" href
+</head>
+<body class="dark-theme"> <!-- Default to light theme -->
+<div id="title">FRISBEE</div>
+<div id ="subtitle">text editor v0.1</div>
+ <nav id="navbar">
+   <ul>
+     <li><a id="settings-button">Settings</a></li>
+     <li><a id="shortcuts-button">Shortcuts</a></li>
+     <li><a id="file-button">File</a></li>
+     <li><a href="https://youtu.be/dQw4w9WgXcQ?si=muRr0POn6dkX-Wsk">Help</a></li>
+   </ul>
+ </nav>
+  <div id="editor-container">
+    <!-- Toolbar for formatting options -->
+    <div id="toolbar">
+      <button onclick="format('bold')"><b>B</b></button>
+      <button onclick="format('italic')"><i>I</i></button>
+      <button onclick="format('underline')"><u>U</u></button>
+      <button onclick="format('insertOrderedList')">OL</button>
+      <button onclick="format('insertUnorderedList')">UL</button>
+      </button>
+    </div>
+
+    <!-- Contenteditable area for text input -->
+    <div id="editor" contenteditable="true">
+    </div>
+  </div>
+
+  <!-- Settings Menu -->
+  <div id="settings-menu" style="display: none;">
+    <h3>Settings</h3>
+    <label for="font-size-select">Font Size:</label>
+    <select id="font-size-select">
+      <option value="8px">Very Small</option>
+      <option value="14px">Small</option>
+      <option value="18px">Medium</option>
+      <option value="22px">Large</option>
+      <option value="34px">Super Large</option>
+    </select>
+    <br>
+    <label for="theme-select">Theme:</label>
+    <select id="theme-select"> <!-- Changed to match JS -->
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="therian">Therian</option>
+    </select>
+    <br>
+      <label for="dlt-clear">
+        $dlt clear
+      </label>
+      <input type="checkbox" id="dlt-clear">
+    </br>
+    </br> 
+    <br>
+    <button id="fullscreenBtn">Fullscreen</button>
+    </br>
+    <br>
+    <button id="save-settings">Save</button>
+    <button id="close-settings">Close</button>
+  </div>
+  
+  <div id="file-menu" style="display: none;">
+    <h3>File</h3>
+    <br>
+      <button type="button" id="pdfexpo" onclick="exportPDF()">Export To PDF</button>
+      </br>
+      <br>
+      <button type="button" id="markdown-export">Export To Markdown</button> 
+    </br>
+    
+   <br>
+    <button id="save-file">Save</button>
+    <button id="close-file">Close</button>
+    </br>
+  </div>
+  
+  <div id="shortcuts-menu" style="display: none;">
+    <h3>Custom Shortcuts</h3>
+    <h4>Write Custom Shortcuts Here!</h4>
+    <h5 id="example">Example :
+    
+    <br>content = content.replace(/yourcharacterhere(.*?)yourcharacterhere/g, '(add a starting tag here)$1(add a ending tag here)');
+</br>
+</h5>
+<h6> replace the "yourcharacterhere" with the combination/key that you want to make the shortcut with, and change (add your tag) to an html starting and ending!</h6>
+   <br>
+   
+   <div class="shortcuts-area-class" id="shortcuts-area" contenteditable="true"></div>
+    <button id="save-shortcuts">Save</button>
+    <button id="close-shortcuts">Close</button>
+    </br>
+  </div>
+  
+
+  <div id="overlay" style="display: none;"></div>
+
+  <!-- External JS library for PDF export -->
+  <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script src="app.js"></script>
+  <script src="test.js"></script>
+</body>
+</html>
