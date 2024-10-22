@@ -223,23 +223,23 @@ document.getElementById('save-settings').addEventListener('click', function () {
     // Change theme (light/dark)
     if (theme === 'dark') {
         document.body.classList.remove('light-theme');
-        document.body.classList.remove('therian-theme')
+        document.body.classList.remove('darkred-theme')
         document.body.classList.add('dark-theme');
         document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.remove('therian-theme');
+        document.getElementById('editor').classList.remove('darkred-theme');
         document.getElementById('editor').classList.add('dark-theme');
-    } else if (theme === 'therian') {
+    } else if (theme === 'dark-red') {
         document.body.classList.remove('light-theme');
         document.body.classList.remove('dark-theme')
-        document.body.classList.add('therian-theme');
+        document.body.classList.add('darkred-theme');
         document.getElementById('editor').classList.remove('light-theme');
         document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.add('therian-theme');
+        document.getElementById('editor').classList.add('darkred-theme');
     } else {
-      document.body.classList.remove('therian-theme');
+      document.body.classList.remove('darkred-theme');
         document.body.classList.remove('dark-theme')
         document.body.classList.add('light-theme');
-        document.getElementById('editor').classList.remove('therian-theme');
+        document.getElementById('editor').classList.remove('darkred-theme');
         document.getElementById('editor').classList.remove('dark-theme');
         document.getElementById('editor').classList.add('light-theme');
     }
