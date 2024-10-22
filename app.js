@@ -228,7 +228,7 @@ document.getElementById('save-settings').addEventListener('click', function () {
         document.getElementById('editor').classList.remove('light-theme');
         document.getElementById('editor').classList.remove('darkred-theme');
         document.getElementById('editor').classList.add('dark-theme');
-    } else if (theme === 'dark-red') {
+    } else if (theme === 'darkred') {
         document.body.classList.remove('light-theme');
         document.body.classList.remove('dark-theme')
         document.body.classList.add('darkred-theme');
