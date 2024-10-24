@@ -1,7 +1,5 @@
-window.onload(
+window.onloadstart = console.warn("loading")
+window.onloadend = console.warn('everything is loaded')
 
-console.warn("everything is loaded!")
 
-)
-
-console.warn("this is a signal from test.js");
+console.warn("this is a sign from test.js")
