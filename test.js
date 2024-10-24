@@ -1,4 +1,4 @@
-window.onloadstart = console.warn("loading")
+window.onloadstart = console.warn("currently loading")
 window.onloadend = console.warn('everything is loaded')
 
 
