@@ -44,15 +44,6 @@ body {
     color: #000; 
 }
 
-#shortcuts-area {
-    min-height: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff; 
-    color: #000; 
-}
-
 /* Settings Menu Styles */
 #settings-menu {
     position: fixed;
@@ -74,7 +65,8 @@ body {
     border-radius: 5px;
     z-index: 1000; 
 }
-#shortcuts-menu {
+
+#keywords-menu {
     position: fixed;
     top: 20%;
     left: 50%;
@@ -82,7 +74,7 @@ body {
     padding: 20px;
     background-color: #fff; 
     border-radius: 5px;
-    z-index: 1000; /*zessir lol */
+    z-index: 1000; 
 }
 
 #example {
@@ -270,6 +262,22 @@ body {
     background-color: #f0f0f0; 
     cursor: pointer;
 }
+#keywords-menu button{
+  padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0; 
+    cursor: pointer;
+}
+
+#add-keywords {
+ min-width: 175px;
+ min-height: 100px;
+ color: darkgrey;
+ font-size: 100px;
+ text-align: center;
+}
 
 .dark-theme #navbar ul{
   background-color: #555; 
@@ -282,30 +290,21 @@ body {
 }
 
 
-.light-theme #shortcuts-menu {
+.light-theme #keywords-menu {
   background-color: #fff;
     border: 3px solid #000000;
 }
 
-.dark-theme #shortcuts-menu {
+.dark-theme #keywords-menu {
   background-color: #444;
     color: #fff;
     border: 3px solid #FFFFFF;
 }
 
-.darkred-theme #shortcuts-menu {
+.darkred-theme #keywords-menu {
   background-color: #240404;
     color: #FFFFFF;
     border: 3px solid #610000;
-}
-
-#shortcuts-menu button{
-  padding: 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f0f0f0; 
-    cursor: pointer;
 }
 
 .light-theme #navbar a {
@@ -320,3 +319,21 @@ body {
   color: white;
   text-decoration: none;
 }
+
+.codeblock {
+      background-color: #1e1e1e;
+      color: #dcdcdc; 
+      font-family: 'Consolas', 'Courier New', monospace; 
+      padding: 10px;
+      border-radius: 8px;
+      min-height: 50px; 
+      max-width: 1000px;
+      outline: none; 
+      overflow-wrap: break-word;
+      word-wrap: break-word; 
+      white-space: normal; 
+   }
+   
+.dark-theme .codeblock {
+  border: 2px solid white;
+   }
