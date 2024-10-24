@@ -5,21 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frisbee 0.1.2</title>
   <link rel="stylesheet" href="style/style.css">
-  <link rel="stylesheet" href
 </head>
 <body class="light-theme"> <!-- Default to light theme -->
 <div id="title">FRISBEE</div>
-<div id ="subtitle">text editor v0.1</div>
+<div id ="subtitle">text editor v0.1.2</div>
  <nav id="navbar">
    <ul>
      <li><a id="settings-button">Settings</a></li>
-     <li><a id="shortcuts-button">Shortcuts</a></li>
+     <li><a id="keywords-button">Keywords</a></li>
      <li><a id="file-button">File</a></li>
      <li><a href="https://youtu.be/dQw4w9WgXcQ?si=muRr0POn6dkX-Wsk">Help</a></li>
    </ul>
  </nav>
   <div id="editor-container">
-    <!-- Toolbar for formatting options -->
     <div id="toolbar">
       <button onclick="format('bold')"><b>B</b></button>
       <button onclick="format('italic')"><i>I</i></button>
@@ -29,12 +27,9 @@
       </button>
     </div>
 
-    <!-- Contenteditable area for text input -->
     <div id="editor" contenteditable="true">
     </div>
   </div>
-
-  <!-- Settings Menu -->
   <div id="settings-menu" style="display: none;">
     <h3>Settings</h3>
     <label for="font-size-select">Font Size:</label>
@@ -47,7 +42,7 @@
     </select>
     <br>
     <label for="theme-select">Theme:</label>
-    <select id="theme-select"> <!-- Changed to match JS -->
+    <select id="theme-select"> 
       <option value="light">Light</option>
       <option value="dark">Dark</option>
       <option value="darkred">DarkRed</option>
@@ -82,27 +77,22 @@
     </br>
   </div>
   
-  <div id="shortcuts-menu" style="display: none;">
-    <h3>Custom Shortcuts</h3>
-    <h4>Write Custom Shortcuts Here!</h4>
-    <h5 id="example">Example :
-    
-    <br>content = content.replace(/yourcharacterhere(.*?)yourcharacterhere/g, '(add a starting tag here)$1(add a ending tag here)');
-</br>
-</h5>
-<h6> replace the "yourcharacterhere" with the combination/key that you want to make the shortcut with, and change (add your tag) to an html starting and ending!</h6>
+  <div id="keywords-menu" style="display: none;">
+    <h3>Keywords</h3>
+    <br>
+    <button id="add-keywords" onclick="addKeywordFromPrompt()">+</button>
+    </br>
+    <br><button id="remove-keywords" onclick="resetkeywords()">Reset To Default</button></br>
    <br>
-   
-   <div class="shortcuts-area-class" id="shortcuts-area" contenteditable="true"></div>
-    <button id="save-shortcuts">Save</button>
-    <button id="close-shortcuts">Close</button>
+    <button id="save-keywords">Save</button>
+    <button id="close-keywords">Close</button>
     </br>
   </div>
-  
 
   <div id="overlay" style="display: none;"></div>
 
-  <!-- External JS library for PDF export -->
+  <!-- my basement of libraries...-->
+  <script src="custom-elements/codeblock.js"></script>
   <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   <script src="app.js"></script>
