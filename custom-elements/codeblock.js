@@ -4,6 +4,8 @@ function handleInput(element) {
   }
 }
 
+// yesir
+
 function enableRightClickCopying() {
     document.addEventListener('contextmenu', (event) => {
         const target = event.target;
