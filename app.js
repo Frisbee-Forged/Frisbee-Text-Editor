@@ -1,4 +1,4 @@
-// Function to apply text formatting like bold, italic, underline, (not sercure need to work on that)
+// Function to apply text formatting like bold, italic, underline, (not sercure need to work on that for sure)
 function format(command) {
     document.execCommand(command, false, null);
 }
