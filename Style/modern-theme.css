@@ -1,0 +1,300 @@
+/* Base Styling */
+.modern-theme body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  text-align: center; /* Center all text */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Title */
+.modern-theme #title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ff3cac, #784ba0, #2b86c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 20px 0;
+}
+
+/* Subtitle */
+.modern-theme #subtitle {
+  font-size: 1.25rem;
+  color: #888;
+  margin-bottom: 40px;
+}
+
+/* Navbar Styling */
+.modern-theme #navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modern-theme #navbar li {
+  margin: 0 15px;
+  position: relative; /* Position relative for dropdowns */
+}
+
+.modern-theme #navbar a {
+  display: inline-block;
+  padding: 12px 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.modern-theme #navbar a:hover {
+  background-color: #f0f0f0;
+  color: #2b86c5;
+}
+
+/* Dropdown Menu */
+.modern-theme #navbar .dropdown {
+  display: none; /* Hide dropdowns by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.modern-theme #navbar li:hover .dropdown {
+  display: block; /* Show dropdown on hover */
+}
+
+.modern-theme #navbar .dropdown a {
+  display: block;
+  padding: 10px 15px;
+  color: #555;
+  transition: background-color 0.3s;
+}
+
+.modern-theme #navbar .dropdown a:hover {
+  background-color: #e0e0e0;
+}
+
+/* Editor Container */
+.modern-theme #editor-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center content */
+  transition: transform 0.3s ease;
+}
+
+/* Toolbar */
+.modern-theme #toolbar {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modern-theme #toolbar button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e5e7eb;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modern-theme #toolbar button:hover {
+  background-color: #2b86c5;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.modern-theme #toolbar button i {
+  margin-right: 5px; /* Space for icons */
+}
+
+/* Editor */
+.modern-theme #editor {
+  min-height: 300px;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  text-align: left;
+}
+
+/* Menus Styling */
+.modern-theme #settings-menu,
+.modern-theme #file-menu,
+.modern-theme #keywords-menu {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none; /* Start hidden */
+}
+
+.modern-theme #settings-menu h3,
+.modern-theme #file-menu h3,
+.modern-theme #keywords-menu h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.modern-theme #settings-menu button,
+.modern-theme #file-menu button,
+.modern-theme #keywords-menu button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modern-theme #settings-menu button:hover,
+.modern-theme #file-menu button:hover,
+.modern-theme #keywords-menu button:hover {
+  background-color: #2b86c5;
+  color: #ffffff;
+}
+
+/* Overlay */
+.modern-theme #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+/* Light/Dark Themes */
+.modern-theme {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Codeblock */
+.modern-theme .codeblock {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  font-family: 'Consolas', 'Courier New', monospace;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  white-space: pre;
+  overflow: auto;
+}
+
+/* Animations */
+.modern-theme #editor-container {
+  transition: transform 0.3s ease;
+}
+
+.modern-theme #editor-container:hover {
+  transform: scale(1.01);
+}
+
+/* Menu Common Styles */
+.modern-theme .menu {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Header Styles for Menus */
+.modern-theme .menu h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2b86c5; /* Primary color for headers */
+  text-align: center; /* Center align the menu headers */
+}
+
+/* Input Fields and Selectors */
+.modern-theme .menu input[type="checkbox"],
+.modern-theme .menu select {
+  width: auto; /* Full width for inputs */
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.modern-theme .menu input[type="checkbox"]:checked {
+  accent-color: #2b86c5; /* Custom color for checked checkboxes */
+}
+
+/* Button Styles for Menus */
+.modern-theme .menu button {
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #e5e7eb;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block; /* Block buttons for full width */
+  width: 100%;
+}
+
+.modern-theme .menu button:hover {
+  background-color: #2b86c5;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Spacing between buttons */
+.modern-theme .menu button + button {
+  margin-top: 10px;
+}
+
+/* Overlay */
+.modern-theme #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
