@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frisbee 0.1.3</title>
+  <title>Frisbee 0.1.3b</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0s7gPTf6T5oO6ZC49E/eU9wUpmNh6Lufc6xZT" crossorigqin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="Style/retro-theme.css">
+  <link rel="stylesheet" href="Style/modern-theme.css">
+  
 </head>
 <body class="light-theme"> <!-- Default to light theme -->
 <div id="title">FRISBEE</div>
-<div id ="subtitle">text editor v0.1.2</div>
+<div id ="subtitle">text editor v0.1.3b</div>
  <nav id="navbar">
    <ul>
      <li><a id="settings-button">Settings</a></li>
@@ -30,11 +35,10 @@
     <div id="editor" contenteditable="true">
     </div>
   </div>
-  <div id="settings-menu" style="display: none;">
+  <div id="settings-menu" style="display: none;" class="menu">
     <h3>Settings</h3>
     <label for="font-size-select">Font Size:</label>
     <select id="font-size-select">
-      <option value="8px">Very Small</option>
       <option value="14px">Small</option>
       <option value="18px">Medium</option>
       <option value="22px">Large</option>
@@ -45,13 +49,16 @@
     <select id="theme-select"> 
       <option value="light">Light</option>
       <option value="dark">Dark</option>
-      <option value="darkred">DarkRed</option>
-    </select>
+      <option value="darkred">Reddish</option>
+      <option value="modern">modern (wip)</option>
+      <option value="retro">retro (wip) </option>
+</select>
     <br>
-      <label for="dlt-clear">
-        $dlt clear
+    <div class="checkbox-container">
+      <label class="checkbox-label" for="dlt-clear"> $dlt Clear
+      <input type="checkbox" id="dlt-clear"> </input>
       </label>
-      <input type="checkbox" id="dlt-clear">
+     </div>
     </br>
     </br> 
     <br>
@@ -62,7 +69,7 @@
     <button id="close-settings">Close</button>
   </div>
   
-  <div id="file-menu" style="display: none;">
+  <div id="file-menu" style="display: none;" class="menu">
     <h3>File</h3>
     <br>
       <button type="button" id="pdfexpo" onclick="exportPDF()">Export To PDF</button>
@@ -77,7 +84,7 @@
     </br>
   </div>
   
-  <div id="keywords-menu" style="display: none;">
+  <div id="keywords-menu" style="display: none;" class="menu">
     <h3>Keywords</h3>
     <br>
     <button id="add-keywords" onclick="addKeywordFromPrompt()">+</button>
