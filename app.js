@@ -1,4 +1,4 @@
-// Function to apply text formatting like bold, italic, underline, (not sercure need to work on that for sure)
+// Function to apply text formatting like bold, italic, underline, (not sercure need to work on that)
 function format(command) {
     document.execCommand(command, false, null);
 }
@@ -9,6 +9,9 @@ window.onload = function() {
     document.getElementById('editor').innerHTML = savedContent;
   }
   loadkeywords();
+  loadTheme();
+  setdlt();
+  setfontsize();
   };
  
 // Auto-save local
@@ -19,6 +22,9 @@ setInterval(() => {
 
 setInterval(() => {
     savekeywords();
+    saveTheme();
+    savedlt();
+    savefontsize();
 }, 5000)
 
 
@@ -236,8 +242,101 @@ document.getElementById('close-keywords').addEventListener('click', function () 
     document.getElementById('overlay').style.display = 'none';
 });
 
+function savefontsize() {
+  localStorage.setItem('fontsize', document.getElementById('font-size-select').value);
+}
+function saveTheme() {
+  localStorage.setItem('theme', document.getElementById('theme-select').value);
+}
+function setfontsize() {
+  const savedfontsize = localStorage.getItem('fontsize')
+  if (savedfontsize) {
+    document.getElementById('editor').style.fontSize = savedfontsize;
+    document.getElementById('font-size-select').value = savedfontsize;
+  }
+}
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme) {
+      theme = savedTheme
+      document.getElementById('theme-select').value = savedTheme
+       checkTheme();
+    }
+}
 
+function savedlt() {
+  localStorage.setItem('$dltenabled', document.getElementById('dlt-clear').checked);
+}
 
+function setdlt() {
+  const saveddlt = localStorage.getItem("$dltenabled");
+  if (saveddlt) {
+    dltClearEnabled = saveddlt
+    document.getElementById('dlt-clear').checked = true
+  }
+}
+
+function checkTheme() {
+  if (theme === 'dark') {
+        document.body.classList.remove('light-theme');
+        document.body.classList.remove('modern-theme');
+        document.body.classList.remove('darkred-theme')
+        document.body.classList.remove('retro-theme');
+        document.body.classList.add('dark-theme');
+        document.getElementById('editor').classList.remove('light-theme');
+        document.getElementById('editor').classList.remove('darkred-theme');
+        document.getElementById('editor').classList.remove('modern-theme');
+        document.getElementById('editor').classList.remove('retro-theme');
+        document.getElementById('editor').classList.add('dark-theme');
+    } else if (theme === 'darkred') {
+        document.body.classList.remove('light-theme');
+        document.body.classList.remove('dark-theme')
+        document.body.classList.remove('modern-theme');
+        document.body.classList.remove('retro-theme');
+        document.body.classList.add('darkred-theme');
+        document.getElementById('editor').classList.remove('light-theme');
+        document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('modern-theme');
+        document.getElementById('editor').classList.remove('retro-theme')
+        document.getElementById('editor').classList.add('darkred-theme');
+    } else if (theme === 'retro') {
+      document.body.classList.remove('darkred-theme');
+        document.body.classList.remove('dark-theme')
+        document.body.classList.remove('light-theme');
+        document.body.classList.remove('modern-theme')
+        document.body.classList.add('retro-theme')
+        document.getElementById('editor').classList.remove('darkred-theme');
+        document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('modern-theme');
+        document.getElementById('editor').classList.remove('light-theme');
+        document.getElementById('editor').classList.add('retro-theme');
+    } 
+    else if (theme === 'modern') {
+      document.body.classList.remove('darkred-theme');
+        document.body.classList.remove('dark-theme')
+        document.body.classList.remove('light-theme');
+        document.body.classList.remove('retro-theme')
+        document.body.classList.add('modern-theme')
+        document.getElementById('editor').classList.remove('darkred-theme');
+        document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('retro-theme');
+        document.getElementById('editor').classList.remove('light-theme');
+        document.getElementById('editor').classList.add('modern-theme');
+    } 
+    else {
+      document.body.classList.remove('darkred-theme');
+        document.body.classList.remove('dark-theme')
+        document.body.classList.remove('modern-theme')
+        document.body.classList.remove('retro-theme')
+        document.body.classList.add('light-theme');
+        document.getElementById('editor').classList.remove('darkred-theme');
+        document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('retro-theme')
+        document.getElementById('editor').classList.remove('modern-theme')
+        document.getElementById('editor').classList.add('light-theme');
+        }
+}
 
 document.getElementById('save-settings').addEventListener('click', function () {
     const fontSize = document.getElementById('font-size-select').value;
@@ -245,24 +344,60 @@ document.getElementById('save-settings').addEventListener('click', function () {
     document.getElementById('editor').style.fontSize = fontSize;
     if (theme === 'dark') {
         document.body.classList.remove('light-theme');
+        document.body.classList.remove('modern-theme');
         document.body.classList.remove('darkred-theme')
+        document.body.classList.remove('retro-theme');
         document.body.classList.add('dark-theme');
         document.getElementById('editor').classList.remove('light-theme');
         document.getElementById('editor').classList.remove('darkred-theme');
+        document.getElementById('editor').classList.remove('modern-theme');
+        document.getElementById('editor').classList.remove('retro-theme');
         document.getElementById('editor').classList.add('dark-theme');
     } else if (theme === 'darkred') {
         document.body.classList.remove('light-theme');
         document.body.classList.remove('dark-theme')
+        document.body.classList.remove('modern-theme');
+        document.body.classList.remove('retro-theme');
         document.body.classList.add('darkred-theme');
         document.getElementById('editor').classList.remove('light-theme');
         document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('modern-theme');
+        document.getElementById('editor').classList.remove('retro-theme')
         document.getElementById('editor').classList.add('darkred-theme');
-    } else {
+    } else if (theme === 'retro') {
       document.body.classList.remove('darkred-theme');
         document.body.classList.remove('dark-theme')
+        document.body.classList.remove('light-theme');
+        document.body.classList.remove('modern-theme')
+        document.body.classList.add('retro-theme')
+        document.getElementById('editor').classList.remove('darkred-theme');
+        document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('modern-theme');
+        document.getElementById('editor').classList.remove('light-theme');
+        document.getElementById('editor').classList.add('retro-theme');
+    } 
+    else if (theme === 'modern') {
+      document.body.classList.remove('darkred-theme');
+        document.body.classList.remove('dark-theme')
+        document.body.classList.remove('light-theme');
+        document.body.classList.remove('retro-theme')
+        document.body.classList.add('modern-theme')
+        document.getElementById('editor').classList.remove('darkred-theme');
+        document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('retro-theme');
+        document.getElementById('editor').classList.remove('light-theme');
+        document.getElementById('editor').classList.add('modern-theme');
+    } 
+    else {
+      document.body.classList.remove('darkred-theme');
+        document.body.classList.remove('dark-theme')
+        document.body.classList.remove('modern-theme')
+        document.body.classList.remove('retro-theme')
         document.body.classList.add('light-theme');
         document.getElementById('editor').classList.remove('darkred-theme');
         document.getElementById('editor').classList.remove('dark-theme');
+        document.getElementById('editor').classList.remove('retro-theme')
+        document.getElementById('editor').classList.remove('modern-theme')
         document.getElementById('editor').classList.add('light-theme');
     }
     document.getElementById('settings-menu').style.display = 'none';
