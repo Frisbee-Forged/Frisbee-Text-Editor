@@ -8,3 +8,20 @@ dark and a reddish dark mode (it looks ass).
 
 please dont use it. i am might update it or something but idk
 also dont use my code its fucking shit.
+
+
+
+# Updates section :
+
+## Halloween Updates! (0.1.3)
+
+Added A New keywords system!
+Added saving to options and keywords
+
+**Added three new themes :**
+
+Modern : how the editor will look in the future (work in progress)
+Retro : a retro look (kind of) to the UI!
+Halloween : a Halloween theme, Acts like a dark mode for modern theme
+
+Bug Fixes And MORE! :)
