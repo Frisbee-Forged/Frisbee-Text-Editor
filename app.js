@@ -83,6 +83,11 @@ function resetkeywords() {
   alert("keywords have been reset to the default setup")
 }
 
+function reseteditor() {
+  document.getElementById('editor').textContent = "type stuff here."
+  alert("editor's content have been Cleared!")
+}
+
 function savekeywords() {
     localStorage.setItem('keywords', JSON.stringify(keywords));
 }
@@ -273,69 +278,88 @@ function setdlt() {
   const saveddlt = localStorage.getItem("$dltenabled");
   if (saveddlt) {
     dltClearEnabled = saveddlt
-    document.getElementById('dlt-clear').checked = true
-  }
+    document.getElementById('dlt-clear').checked = saveddlt
+  } 
 }
 
 function checkTheme() {
   if (theme === 'dark') {
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('modern-theme');
-        document.body.classList.remove('darkred-theme')
-        document.body.classList.remove('retro-theme');
-        document.body.classList.add('dark-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('modern-theme');
-        document.getElementById('editor').classList.remove('retro-theme');
-        document.getElementById('editor').classList.add('dark-theme');
-    } else if (theme === 'darkred') {
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('modern-theme');
-        document.body.classList.remove('retro-theme');
-        document.body.classList.add('darkred-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('modern-theme');
-        document.getElementById('editor').classList.remove('retro-theme')
-        document.getElementById('editor').classList.add('darkred-theme');
-    } else if (theme === 'retro') {
-      document.body.classList.remove('darkred-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('modern-theme')
-        document.body.classList.add('retro-theme')
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('modern-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.add('retro-theme');
-    } 
-    else if (theme === 'modern') {
-      document.body.classList.remove('darkred-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('retro-theme')
-        document.body.classList.add('modern-theme')
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('retro-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.add('modern-theme');
-    } 
-    else {
-      document.body.classList.remove('darkred-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('modern-theme')
-        document.body.classList.remove('retro-theme')
-        document.body.classList.add('light-theme');
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('retro-theme')
-        document.getElementById('editor').classList.remove('modern-theme')
-        document.getElementById('editor').classList.add('light-theme');
-        }
+    document.body.classList.remove('light-theme');
+    document.body.classList.remove('modern-theme');
+    document.body.classList.remove('darkred-theme');
+    document.body.classList.remove('retro-theme');
+    document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+    document.body.classList.add('dark-theme');
+    document.getElementById('editor').classList.remove('light-theme');
+    document.getElementById('editor').classList.remove('darkred-theme');
+    document.getElementById('editor').classList.remove('modern-theme');
+    document.getElementById('editor').classList.remove('retro-theme');
+    document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+    document.getElementById('editor').classList.add('dark-theme');
+  } else if (theme === 'darkred') {
+    document.body.classList.remove('light-theme');
+    document.body.classList.remove('dark-theme');
+    document.body.classList.remove('modern-theme');
+    document.body.classList.remove('retro-theme');
+    document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+    document.body.classList.add('darkred-theme');
+    document.getElementById('editor').classList.remove('light-theme');
+    document.getElementById('editor').classList.remove('dark-theme');
+    document.getElementById('editor').classList.remove('modern-theme');
+    document.getElementById('editor').classList.remove('retro-theme');
+    document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+    document.getElementById('editor').classList.add('darkred-theme');
+  } else if (theme === 'retro') {
+    document.body.classList.remove('darkred-theme');
+    document.body.classList.remove('dark-theme');
+    document.body.classList.remove('light-theme');
+    document.body.classList.remove('modern-theme');
+    document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+    document.body.classList.add('retro-theme');
+    document.getElementById('editor').classList.remove('darkred-theme');
+    document.getElementById('editor').classList.remove('dark-theme');
+    document.getElementById('editor').classList.remove('modern-theme');
+    document.getElementById('editor').classList.remove('light-theme');
+    document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+    document.getElementById('editor').classList.add('retro-theme');
+  } else if (theme === 'modern') {
+    document.body.classList.remove('darkred-theme');
+    document.body.classList.remove('dark-theme');
+    document.body.classList.remove('light-theme');
+    document.body.classList.remove('retro-theme');
+    document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+    document.body.classList.add('modern-theme');
+    document.getElementById('editor').classList.remove('darkred-theme');
+    document.getElementById('editor').classList.remove('dark-theme');
+    document.getElementById('editor').classList.remove('retro-theme');
+    document.getElementById('editor').classList.remove('light-theme');
+    document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+    document.getElementById('editor').classList.add('modern-theme');
+  } else if (theme === 'halloween') { // Add Halloween theme condition
+    document.body.classList.remove('light-theme');
+    document.body.classList.remove('dark-theme');
+    document.body.classList.remove('darkred-theme');
+    document.body.classList.remove('retro-theme');
+    document.body.classList.add('halloween-theme'); // Add Halloween theme
+    document.getElementById('editor').classList.remove('light-theme');
+    document.getElementById('editor').classList.remove('dark-theme');
+    document.getElementById('editor').classList.remove('darkred-theme');
+    document.getElementById('editor').classList.remove('retro-theme');
+    document.getElementById('editor').classList.add('halloween-theme'); // Add Halloween theme
+  } else {
+    document.body.classList.remove('darkred-theme');
+    document.body.classList.remove('dark-theme');
+    document.body.classList.remove('modern-theme');
+    document.body.classList.remove('retro-theme');
+    document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+    document.body.classList.add('light-theme');
+    document.getElementById('editor').classList.remove('darkred-theme');
+    document.getElementById('editor').classList.remove('dark-theme');
+    document.getElementById('editor').classList.remove('retro-theme');
+    document.getElementById('editor').classList.remove('modern-theme');
+    document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+    document.getElementById('editor').classList.add('light-theme');
+  }
 }
 
 document.getElementById('save-settings').addEventListener('click', function () {
@@ -343,62 +367,81 @@ document.getElementById('save-settings').addEventListener('click', function () {
     const theme = document.getElementById('theme-select').value;
     document.getElementById('editor').style.fontSize = fontSize;
     if (theme === 'dark') {
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('modern-theme');
-        document.body.classList.remove('darkred-theme')
-        document.body.classList.remove('retro-theme');
-        document.body.classList.add('dark-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('modern-theme');
-        document.getElementById('editor').classList.remove('retro-theme');
-        document.getElementById('editor').classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+      document.body.classList.remove('modern-theme');
+      document.body.classList.remove('darkred-theme');
+      document.body.classList.remove('retro-theme');
+      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.add('dark-theme');
+      document.getElementById('editor').classList.remove('light-theme');
+      document.getElementById('editor').classList.remove('darkred-theme');
+      document.getElementById('editor').classList.remove('modern-theme');
+      document.getElementById('editor').classList.remove('retro-theme');
+      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.add('dark-theme');
     } else if (theme === 'darkred') {
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('modern-theme');
-        document.body.classList.remove('retro-theme');
-        document.body.classList.add('darkred-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('modern-theme');
-        document.getElementById('editor').classList.remove('retro-theme')
-        document.getElementById('editor').classList.add('darkred-theme');
+      document.body.classList.remove('light-theme');
+      document.body.classList.remove('dark-theme');
+      document.body.classList.remove('modern-theme');
+      document.body.classList.remove('retro-theme');
+      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.add('darkred-theme');
+      document.getElementById('editor').classList.remove('light-theme');
+      document.getElementById('editor').classList.remove('dark-theme');
+      document.getElementById('editor').classList.remove('modern-theme');
+      document.getElementById('editor').classList.remove('retro-theme');
+      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.add('darkred-theme');
     } else if (theme === 'retro') {
       document.body.classList.remove('darkred-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('modern-theme')
-        document.body.classList.add('retro-theme')
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('modern-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.add('retro-theme');
-    } 
-    else if (theme === 'modern') {
+      document.body.classList.remove('dark-theme');
+      document.body.classList.remove('light-theme');
+      document.body.classList.remove('modern-theme');
+      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.add('retro-theme');
+      document.getElementById('editor').classList.remove('darkred-theme');
+      document.getElementById('editor').classList.remove('dark-theme');
+      document.getElementById('editor').classList.remove('modern-theme');
+      document.getElementById('editor').classList.remove('light-theme');
+      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.add('retro-theme');
+    } else if (theme === 'modern') {
       document.body.classList.remove('darkred-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('light-theme');
-        document.body.classList.remove('retro-theme')
-        document.body.classList.add('modern-theme')
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('retro-theme');
-        document.getElementById('editor').classList.remove('light-theme');
-        document.getElementById('editor').classList.add('modern-theme');
-    } 
-    else {
+      document.body.classList.remove('dark-theme');
+      document.body.classList.remove('light-theme');
+      document.body.classList.remove('retro-theme');
+      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.add('modern-theme');
+      document.getElementById('editor').classList.remove('darkred-theme');
+      document.getElementById('editor').classList.remove('dark-theme');
+      document.getElementById('editor').classList.remove('retro-theme');
+      document.getElementById('editor').classList.remove('light-theme');
+      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.add('modern-theme');
+    } else if (theme === 'halloween') { // Add Halloween theme condition
+      document.body.classList.remove('light-theme');
+      document.body.classList.remove('dark-theme');
       document.body.classList.remove('darkred-theme');
-        document.body.classList.remove('dark-theme')
-        document.body.classList.remove('modern-theme')
-        document.body.classList.remove('retro-theme')
-        document.body.classList.add('light-theme');
-        document.getElementById('editor').classList.remove('darkred-theme');
-        document.getElementById('editor').classList.remove('dark-theme');
-        document.getElementById('editor').classList.remove('retro-theme')
-        document.getElementById('editor').classList.remove('modern-theme')
-        document.getElementById('editor').classList.add('light-theme');
+      document.body.classList.remove('retro-theme');
+      document.body.classList.add('halloween-theme'); // Add Halloween theme
+      document.getElementById('editor').classList.remove('light-theme');
+      document.getElementById('editor').classList.remove('dark-theme');
+      document.getElementById('editor').classList.remove('darkred-theme');
+      document.getElementById('editor').classList.remove('retro-theme');
+      document.getElementById('editor').classList.add('halloween-theme'); // Add Halloween theme
+    } else {
+      document.body.classList.remove('darkred-theme');
+      document.body.classList.remove('dark-theme');
+      document.body.classList.remove('modern-theme');
+      document.body.classList.remove('retro-theme');
+      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.add('light-theme');
+      document.getElementById('editor').classList.remove('darkred-theme');
+      document.getElementById('editor').classList.remove('dark-theme');
+      document.getElementById('editor').classList.remove('retro-theme');
+      document.getElementById('editor').classList.remove('modern-theme');
+      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.add('light-theme');
     }
     document.getElementById('settings-menu').style.display = 'none';
     overlay.style.display = 'none';
