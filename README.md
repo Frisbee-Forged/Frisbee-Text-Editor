@@ -15,13 +15,13 @@ also dont use my code its fucking shit.
 
 ## Halloween Updates! (0.1.3)
 
-Added A New keywords system!
-Added saving to options and keywords
+- Added A New keywords system!
+- Added saving to options and keywords
 
 **Added three new themes :**
 
-Modern : how the editor will look in the future (work in progress)
-Retro : a retro look (kind of) to the UI!
-Halloween : a Halloween theme, Acts like a dark mode for modern theme
+- Modern : how the editor will look in the future (work in progress)
+- Retro : a retro look (kind of) to the UI!
+- Halloween : a Halloween theme, Acts like a dark mode for modern theme
 
 Bug Fixes And MORE! :)
