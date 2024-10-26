@@ -1,0 +1,374 @@
+.halloween-theme {
+  background: #4B4B4B;
+}
+/* Base Styling */
+.halloween-theme body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #1a1a1a; /* Dark background */
+  color: #f7b733; /* Pumpkin orange text */
+  text-align: center; /* Center all text */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Title */
+.halloween-theme #title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #f7b733, #F0BF00, #C30038);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 20px 0;
+}
+
+/* Subtitle */
+.halloween-theme #subtitle {
+  font-size: 1.25rem;
+  color: #DCDCDC; /* Light grey for subtitle */
+  margin-bottom: 40px;
+}
+
+/* Navbar Styling */
+.halloween-theme #navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: #2C2C2C; /* Dark navbar */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.halloween-theme #navbar li {
+  margin: 0 15px;
+  position: relative; /* Position relative for dropdowns */
+}
+
+.halloween-theme #navbar a {
+  display: inline-block;
+  padding: 12px 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #f7b733; /* Pumpkin orange */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.halloween-theme #navbar a:hover {
+  background-color: #444444; /* Darker background on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+/* Dropdown Menu */
+.halloween-theme #navbar .dropdown {
+  display: none; /* Hide dropdowns by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2c2c2c; /* Dark dropdown */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.halloween-theme #navbar li:hover .dropdown {
+  display: block; /* Show dropdown on hover */
+}
+
+.halloween-theme #navbar .dropdown a {
+  display: block;
+  padding: 10px 15px;
+  color: #f7b733; /* Pumpkin orange */
+  transition: background-color 0.3s;
+}
+
+.halloween-theme #navbar .dropdown a:hover {
+  background-color: #444; /* Darker background on hover */
+}
+
+/* Editor Container */
+.halloween-theme #editor-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #444; /* Dark border */
+  border-radius: 15px;
+  background-color: #2a2a2a; /* Dark editor background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center; /* Center content */
+  transition: transform 0.3s ease;
+}
+
+/* Toolbar */
+.halloween-theme #toolbar {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.halloween-theme #toolbar button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f7b733; /* Pumpkin orange */
+  color: #1a1a1a; /* Dark text for buttons */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.halloween-theme #toolbar button:hover {
+  background-color: #ff3cac; /* Pink hover effect */
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.halloween-theme #toolbar button i {
+  margin-right: 5px; /* Space for icons */
+}
+
+/* Editor */
+.halloween-theme #editor {
+  min-height: 300px;
+  padding: 15px;
+  border: 1px solid #444; /* Darker border for editor */
+  border-radius: 10px;
+  background-color: #1e1e1e; /* Even darker background for the editor */
+  font-size: 1rem;
+  color: #f7b733; /* Pumpkin orange text */
+  outline: none;
+  text-align: left;
+}
+
+/* Menus Styling */
+.halloween-theme #settings-menu,
+.halloween-theme #file-menu,
+.halloween-theme #keywords-menu {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  padding: 20px;
+  background-color: #2a2a2a; 
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none; /* Start hidden */
+}
+
+.halloween-theme #settings-menu h3,
+.halloween-theme #file-menu h3,
+.halloween-theme #keywords-menu h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #f7b733; /* Pumpkin orange for headers */
+}
+
+.halloween-theme #settings-menu button,
+.halloween-theme #file-menu button,
+.halloween-theme #keywords-menu button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #444; /* Dark buttons */
+  color: #f7b733; /* Pumpkin orange */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.halloween-theme #settings-menu button:hover,
+.halloween-theme #file-menu button:hover,
+.halloween-theme #keywords-menu button:hover {
+  background-color: #ff3cac; /* Pink on hover */
+  color: #ffffff;
+}
+
+/* Overlay */
+.halloween-theme #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+  display: none;
+}
+
+/* Codeblock */
+.halloween-theme .codeblock {
+  background-color: #2B2B2B;
+  color: #F7B733; /* Pumpkin orange */
+  font-family: 'Consolas', 'Courier New', monospace;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  white-space: pre;
+  overflow: auto;
+}
+
+/* Animations */
+.halloween-theme #editor-container {
+  transition: transform 0.3s ease;
+}
+
+.halloween-theme #editor-container:hover {
+  transform: scale(1.01);
+}
+
+/* Menu Common Styles */
+.halloween-theme .menu {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #2a2a2a; /* Dark menu background */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Header Styles for Menus */
+.halloween-theme .menu h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #f7b733; /* Pumpkin orange for menu headers */
+  text-align: center; /* Center align the menu headers */
+}
+
+/* Input Fields and Selectors */
+.halloween-theme .menu input[type="checkbox"],
+.halloween-theme .menu select {
+  width: auto; /* Full width for inputs */
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #444; /* Dark border */
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+  background-color: #1e1e1e; /* Dark background for inputs */
+  color: #f7b733; /* Pumpkin orange text for inputs */
+}
+
+.halloween-theme .menu input[type="checkbox"]:checked {
+  accent-color: #f7b733; /* Pumpkin orange for checked checkboxes */
+}
+
+/* Button Styles for Menus */
+.halloween-theme .menu button {
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #444; /* Dark button background */
+  color: #f7b733; /* Pumpkin orange text for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.halloween-theme .menu button:hover {
+  background-color: #ff3cac; /* Pink hover effect */
+  color: #ffffff; /* White text on hover */
+}
+
+/* Footer Styling */
+.halloween-theme footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #2c2c2c; /* Dark footer */
+  border-top: 3px solid #f7b733; /* Pumpkin orange top border */
+}
+
+.halloween-theme footer p {
+  color: #dcdcdc; /* Light grey for footer text */
+  font-size: 0.9rem;
+}
+
+/* Special Effects for Halloween */
+.halloween-theme .spooky-effect {
+  position: relative;
+}
+
+.halloween-theme .spooky-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path/to/spooky-overlay.png') center center / cover no-repeat;
+  opacity: 0.3; /* Light overlay effect */
+  z-index: 0; /* Position behind content */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.halloween-theme .spooky-effect h1,
+.halloween-theme .spooky-effect h2,
+.halloween-theme .spooky-effect p {
+  position: relative; /* Position content above the overlay */
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+/* Hover Animations */
+.halloween-theme #editor-container:hover {
+  animation: shake 0.5s; /* Shake effect on hover */
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  25% { transform: translate(-1px, -2px) rotate(-1deg); }
+  50% { transform: translate(-3px, 0px) rotate(1deg); }
+  75% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -1px) rotate(-1deg); }
+}
+
+/* Text Highlighting */
+.halloween-theme .highlight {
+  background-color: #ffcc00; /* Bright yellow for highlights */
+  color: #1a1a1a; /* Dark text for readability */
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Glow Effects */
+.halloween-theme .glow {
+  text-shadow: 0 0 5px #f7b733, 0 0 10px #f7b733, 0 0 15px #ff3cac, 0 0 20px #ff3cac;
+}
+
+/* Tooltip */
+.halloween-theme .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.halloween-theme .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #2c2c2c; /* Dark background for tooltip */
+  color: #f7b733; /* Pumpkin orange text */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the tooltip element */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.halloween-theme .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1; /* Show tooltip on hover */
+}
