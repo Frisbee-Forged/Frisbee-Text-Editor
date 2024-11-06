@@ -67,7 +67,7 @@ body {
 }
 
 #keywords-menu {
-    position: fixed;
+  position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -20%);
@@ -76,6 +76,7 @@ body {
     border-radius: 5px;
     z-index: 1000; 
 }
+
 /* unused */
 #example {
   color: dimgray;
@@ -118,6 +119,10 @@ body {
   float: left;
   margin: 10px;
   text-decoration: none;
+}
+#saving-pop {
+  display: none;
+  list-style-type: none;
 }
 
 #title {
@@ -336,4 +341,12 @@ body {
    
 .dark-theme .codeblock {
   border: 2px solid white;
+}
+
+.light-theme #saving-pop {
+  color: dimgray;
+}
+
+.dark-theme #saving-pop, .darkred-theme #saving-pop {
+  color: whitesmoke;
 }
