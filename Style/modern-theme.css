@@ -85,6 +85,10 @@
   background-color: #e0e0e0;
 }
 
+.modern-theme #saving-pop {
+  color: dimgray;
+}
+
 /* Editor Container */
 .modern-theme #editor-container {
   width: 80%;
@@ -127,7 +131,7 @@
 }
 
 .modern-theme #toolbar button i {
-  margin-right: 5px; /* Space for icons */
+  margin-right: 0 auto; /* Space for icons */
 }
 
 /* Editor */
@@ -226,7 +230,7 @@
 
 /* Menu Common Styles */
 .modern-theme .menu {
-  max-width: 400px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
   background-color: #ffffff;
