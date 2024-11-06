@@ -85,7 +85,11 @@
 }
 
 .halloween-theme #navbar .dropdown a:hover {
-  background-color: #444; /* Darker background on hover */
+  background-color: #444444; /* Darker background on hover */
+}
+
+.halloween-theme #saving-pop {
+  color: #F7B733;
 }
 
 /* Editor Container */
@@ -131,7 +135,7 @@
 }
 
 .halloween-theme #toolbar button i {
-  margin-right: 5px; /* Space for icons */
+  margin-right: 0 auto; /* Space for icons */
 }
 
 /* Editor */
