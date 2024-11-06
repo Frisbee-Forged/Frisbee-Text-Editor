@@ -176,3 +176,12 @@
   transition: transform 0.2s;
   transform: scale(1.05);
 }
+
+.retro-theme #saving-pop {
+  padding: 10px 5px;
+  background-color: #CCCCCC;
+  border: 1px solid #1A1A1A;
+  color: #333333;
+  font-size: 1rem;
+  cursor: pointer;
+}
