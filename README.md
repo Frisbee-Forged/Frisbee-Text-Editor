@@ -46,7 +46,7 @@ Bug Fixes And MORE! :)
 - Removed The Test.js file (useless)
 
 
-- Tweaked The Themes a Bit (Still working towards the modefn theme getting finished )
+- Tweaked The Themes a Bit (Still working towards the modern theme getting finished )
 
 
 *and that was all!,*
