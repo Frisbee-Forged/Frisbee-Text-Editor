@@ -1,7 +1,26 @@
 // Function to apply text formatting like bold, italic, underline, (not sercure need to work on that)
+// edit, i cooked.
 function format(command) {
-    document.execCommand(command, false, null);
-}
+            if (command === 'createLink') {
+                const url = prompt('Enter the URL:');
+                if (url) {
+                    const validatedUrl = url.startsWith('http') ? url : 'http://' + url;
+                    document.execCommand(command, false, validatedUrl);
+                }
+            } else {
+                document.execCommand(command, false, null);
+            }
+        }
+        document.getElementById('editor').addEventListener('click', function (event) {
+            if (event.target.tagName === 'A') {
+              let editorlink = document.getElementById("links-click").checked;
+                event.preventDefault();
+                if (editorlink) {
+                window.open(event.target.href, '_blank');
+                console.log('Link clicked:', event.target.href);
+                }
+            }
+        });
 
 window.onload = function() {
   const savedContent = localStorage.getItem('document');
@@ -10,7 +29,7 @@ window.onload = function() {
   }
   loadkeywords();
   loadTheme();
-  setdlt();
+  setcheckbox();
   setfontsize();
   };
  
@@ -21,14 +40,22 @@ setInterval(() => {
 }, 5000);
 
 setInterval(() => {
+    savingpop();
     savekeywords();
     saveTheme();
-    savedlt();
+    savecheckbox();
     savefontsize();
 }, 5000)
 
+function savingpop() {
+    const savingPop = document.getElementById("saving-pop");
+    savingPop.style.display = "inline-flex"; 
 
-// exportpdf
+    setTimeout(() => {
+        savingPop.style.display = "none"; 
+    }, 1500);
+}
+
 function exportPDF() {
     const element = document.getElementById('editor');
     html2pdf().from(element).save();
@@ -212,6 +239,7 @@ document.getElementById('file-button').addEventListener('click', function () {
 
 document.getElementById('keywords-button').addEventListener('click', function () {
     const keywordsMenu = document.getElementById('keywords-menu');
+    const keywordslist = document.getElementById('keywords-list');
     const overlay = document.getElementById('overlay');
 
     if (keywordsMenu.style.display === 'none') {
@@ -270,16 +298,18 @@ function loadTheme() {
     }
 }
 
-function savedlt() {
+function savecheckbox() {
   localStorage.setItem('$dltenabled', document.getElementById('dlt-clear').checked);
+  localStorage.setItem('editorlinkenabled', document.getElementById('links-click').checked);
 }
 
-function setdlt() {
-  const saveddlt = localStorage.getItem("$dltenabled");
-  if (saveddlt) {
+function setcheckbox() {
+  let saveddlt = localStorage.getItem("$dltenabled");
+  let savededitorlink = localStorage.getItem("editorlinkenabled")
     dltClearEnabled = saveddlt
     document.getElementById('dlt-clear').checked = saveddlt
-  } 
+    editorlink = savededitorlink
+    document.getElementById('links-click').checked = savededitorlink
 }
 
 function checkTheme() {
