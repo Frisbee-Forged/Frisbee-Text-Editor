@@ -14,5 +14,5 @@ async function checkForUpdates(currentVersion) {
     }
 }
 
-const currentVersion = "0.1.3d";
+const currentVersion = "0.1.4";
 checkForUpdates(currentVersion);
