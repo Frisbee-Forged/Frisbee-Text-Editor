@@ -14,5 +14,15 @@ async function checkForUpdates(currentVersion) {
     }
 }
 
-const currentVersion = "0.1.4";
+function updatetitle(currentVersion) {
+ subtitle = document.getElementById('subtitle')
+  
+  document.title = "Frisbee " + currentVersion;
+  subtitle.textContent = "Text Editor " + currentVersion;
+ 
+}
+
+
+const currentVersion = "0.1.4t";
+updatetitle(currentVersion);
 checkForUpdates(currentVersion);
