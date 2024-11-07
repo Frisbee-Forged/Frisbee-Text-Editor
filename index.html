@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frisbee 0.1.4</title>
+  <title>Frisbee</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0s7gPTf6T5oO6ZC49E/eU9wUpmNh6Lufc6xZT" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style/mathblock.css">
   <link rel="stylesheet" href="Style/style.css">
   <link rel="stylesheet" href="Style/retro-theme.css">
   <link rel="stylesheet" href="Style/modern-theme.css">
@@ -15,7 +16,7 @@
 </head>
 <body class="light-theme"> <!-- Default to light theme -->
 <div id="title">FRISBEE</div>
-<div id ="subtitle">text editor v0.1.4</div>
+<div id ="subtitle">text editor</div>
  <nav id="navbar">
    <ul>
      <li><a id="settings-button">Settings</a></li>
@@ -58,6 +59,9 @@
       <button onclick="format('redo')">
         <i class="fas fa-undo fa-flip-horizontal fa-sm"></i>
       </button>
+      <button id="find-tool-btn">
+        <i class="fas fa-search fa-flip-horizontal fa-sm"></i>
+        </button>
     </div>
 
     <div id="editor" contenteditable="true">
@@ -108,11 +112,8 @@
     <h3>File</h3>
     <br>
       <button type="button" id="pdfexpo" onclick="exportPDF()">Export To PDF</button>
-      </br>
-      <br>
       <button type="button" id="markdown-export">Export To Markdown</button> 
     </br>
-    
    <br>
     <button id="save-file">Save</button>
     <button id="close-file">Close</button>
@@ -129,12 +130,19 @@
     <button id="save-keywords">Save</button>
     <button id="close-keywords">Close</button>
     </br>
-    <dib style="display: none;" class="submenu">
-      test
-    </div>
   </div>
 
   <div id="overlay" style="display: none;"></div>
+  
+  
+<div id="find-replace-tool">
+  <input type="text" id="findInput" placeholder="Find..." />
+  <input type="text" id="replaceInput" placeholder="Replace with..." />
+  <button id="findNextBtn">Find All</button>
+  <button id="replaceBtn">Replace One</button>
+  <button id="replaceAllBtn">Replace All</button>
+    <button id="closefind-tool">Close</button>
+</div>
 
   <!-- my basement of libraries...-->
   <script src="custom-elements/update.js"></script>
