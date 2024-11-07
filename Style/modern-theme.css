@@ -302,3 +302,18 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
 }
+
+.modern-theme .highlight {
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: highlightAnimation 3s ease infinite;
+}
+
+@keyframes highlightAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
