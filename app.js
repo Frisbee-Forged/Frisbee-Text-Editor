@@ -27,6 +27,7 @@ window.onload = function() {
   if (savedContent) {
     document.getElementById('editor').innerHTML = savedContent;
   }
+  clearHighlights() 
   loadkeywords();
   loadTheme();
   setcheckbox();
@@ -365,29 +366,29 @@ function checkTheme() {
     document.getElementById('editor').classList.remove('light-theme');
     document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
     document.getElementById('editor').classList.add('modern-theme');
-  } else if (theme === 'halloween') { // Add Halloween theme condition
+  } else if (theme === 'halloween') { 
     document.body.classList.remove('light-theme');
     document.body.classList.remove('dark-theme');
     document.body.classList.remove('darkred-theme');
     document.body.classList.remove('retro-theme');
-    document.body.classList.add('halloween-theme'); // Add Halloween theme
+    document.body.classList.add('halloween-theme'); 
     document.getElementById('editor').classList.remove('light-theme');
     document.getElementById('editor').classList.remove('dark-theme');
     document.getElementById('editor').classList.remove('darkred-theme');
     document.getElementById('editor').classList.remove('retro-theme');
-    document.getElementById('editor').classList.add('halloween-theme'); // Add Halloween theme
+    document.getElementById('editor').classList.add('halloween-theme');
   } else {
     document.body.classList.remove('darkred-theme');
     document.body.classList.remove('dark-theme');
     document.body.classList.remove('modern-theme');
     document.body.classList.remove('retro-theme');
-    document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+    document.body.classList.remove('halloween-theme');
     document.body.classList.add('light-theme');
     document.getElementById('editor').classList.remove('darkred-theme');
     document.getElementById('editor').classList.remove('dark-theme');
     document.getElementById('editor').classList.remove('retro-theme');
     document.getElementById('editor').classList.remove('modern-theme');
-    document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+    document.getElementById('editor').classList.remove('halloween-theme'); 
     document.getElementById('editor').classList.add('light-theme');
   }
 }
@@ -401,59 +402,59 @@ document.getElementById('save-settings').addEventListener('click', function () {
       document.body.classList.remove('modern-theme');
       document.body.classList.remove('darkred-theme');
       document.body.classList.remove('retro-theme');
-      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.remove('halloween-theme'); 
       document.body.classList.add('dark-theme');
       document.getElementById('editor').classList.remove('light-theme');
       document.getElementById('editor').classList.remove('darkred-theme');
       document.getElementById('editor').classList.remove('modern-theme');
       document.getElementById('editor').classList.remove('retro-theme');
-      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.remove('halloween-theme'); 
       document.getElementById('editor').classList.add('dark-theme');
     } else if (theme === 'darkred') {
       document.body.classList.remove('light-theme');
       document.body.classList.remove('dark-theme');
       document.body.classList.remove('modern-theme');
       document.body.classList.remove('retro-theme');
-      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.remove('halloween-theme'); 
       document.body.classList.add('darkred-theme');
       document.getElementById('editor').classList.remove('light-theme');
       document.getElementById('editor').classList.remove('dark-theme');
       document.getElementById('editor').classList.remove('modern-theme');
       document.getElementById('editor').classList.remove('retro-theme');
-      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.remove('halloween-theme');
       document.getElementById('editor').classList.add('darkred-theme');
     } else if (theme === 'retro') {
       document.body.classList.remove('darkred-theme');
       document.body.classList.remove('dark-theme');
       document.body.classList.remove('light-theme');
       document.body.classList.remove('modern-theme');
-      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.remove('halloween-theme');
       document.body.classList.add('retro-theme');
       document.getElementById('editor').classList.remove('darkred-theme');
       document.getElementById('editor').classList.remove('dark-theme');
       document.getElementById('editor').classList.remove('modern-theme');
       document.getElementById('editor').classList.remove('light-theme');
-      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.remove('halloween-theme'); 
       document.getElementById('editor').classList.add('retro-theme');
     } else if (theme === 'modern') {
       document.body.classList.remove('darkred-theme');
       document.body.classList.remove('dark-theme');
       document.body.classList.remove('light-theme');
       document.body.classList.remove('retro-theme');
-      document.body.classList.remove('halloween-theme'); // Remove Halloween theme
+      document.body.classList.remove('halloween-theme');
       document.body.classList.add('modern-theme');
       document.getElementById('editor').classList.remove('darkred-theme');
       document.getElementById('editor').classList.remove('dark-theme');
       document.getElementById('editor').classList.remove('retro-theme');
       document.getElementById('editor').classList.remove('light-theme');
-      document.getElementById('editor').classList.remove('halloween-theme'); // Remove Halloween theme
+      document.getElementById('editor').classList.remove('halloween-theme'); 
       document.getElementById('editor').classList.add('modern-theme');
-    } else if (theme === 'halloween') { // Add Halloween theme condition
+    } else if (theme === 'halloween') { 
       document.body.classList.remove('light-theme');
       document.body.classList.remove('dark-theme');
       document.body.classList.remove('darkred-theme');
       document.body.classList.remove('retro-theme');
-      document.body.classList.add('halloween-theme'); // Add Halloween theme
+      document.body.classList.add('halloween-theme');
       document.getElementById('editor').classList.remove('light-theme');
       document.getElementById('editor').classList.remove('dark-theme');
       document.getElementById('editor').classList.remove('darkred-theme');
@@ -491,3 +492,89 @@ const fullscreenBtn = document.getElementById('fullscreenBtn');
                 document.exitFullscreen();
             }
         });
+
+
+let lastMouseX = 0;
+  let lastMouseY = 0;
+  let findmenu = document.getElementById('find-replace-tool');
+  let findmenubtn = document.getElementById('find-tool-btn');
+  let findclosebtn = document.getElementById('closefind-tool');
+
+  document.addEventListener('mousemove', (event) => {
+    lastMouseX = event.pageX;
+    lastMouseY = event.pageY;
+  });
+
+  findmenubtn.addEventListener('click', () => {
+    findmenu.style.left = `${lastMouseX}px`;
+    findmenu.style.top = `${lastMouseY}px`;
+    findmenu.style.display = 'block';
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!findmenu.contains(event.target) && event.target !== findmenubtn) {
+      findmenu.style.display = 'none';
+      clearHighlights();
+    }
+  });
+  
+  findclosebtn.addEventListener('click',
+  function() {
+    findmenu.style.display = 'none';
+      clearHighlights();
+  });
+
+
+let findInput = document.getElementById('findInput');
+let replaceInput = document.getElementById('replaceInput');
+let findNextBtn = document.getElementById('findNextBtn');
+let replaceBtn = document.getElementById('replaceBtn');
+let replaceAllBtn = document.getElementById('replaceAllBtn');
+
+function clearHighlights() {
+  editor.innerHTML = editor.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
+}
+
+function highlightAll() {
+  let findTextValue = findInput.value;
+  let editorContent = editor.innerHTML;
+
+  // regex bullsh*t
+  let escapedFindText = findTextValue.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+  let searchRegExp = new RegExp(escapedFindText, 'gi');
+
+  let highlightedContent = editorContent.replace(searchRegExp, (match) => `<span class="highlight">${match}</span>`);
+  editor.innerHTML = highlightedContent;
+}
+
+function replaceText() {
+  let findTextValue = findInput.value;
+  let replaceTextValue = replaceInput.value;
+  let editorContent = editor.innerHTML;
+
+  editorContent = editorContent.replace(findTextValue, replaceTextValue);
+  editor.innerHTML = editorContent;
+
+  clearHighlights();
+}
+
+function replaceAll() {
+  let findTextValue = findInput.value;
+  let replaceTextValue = replaceInput.value;
+  let editorContent = editor.innerHTML;
+
+  let escapedFindText = findTextValue.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+  let searchRegExp = new RegExp(escapedFindText, 'g');
+
+  editorContent = editorContent.replace(searchRegExp, replaceTextValue);
+  editor.innerHTML = editorContent;
+
+  clearHighlights();
+}
+
+findNextBtn.addEventListener('click', () => {
+  clearHighlights();
+  highlightAll();
+});
+replaceBtn.addEventListener('click', replaceText);
+replaceAllBtn.addEventListener('click', replaceAll);
