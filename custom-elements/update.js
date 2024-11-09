@@ -23,6 +23,6 @@ function updatetitle(currentVersion) {
 }
 
 
-const currentVersion = "0.1.4t";
+const currentVersion = "0.1.5b";
 updatetitle(currentVersion);
 checkForUpdates(currentVersion);
