@@ -150,7 +150,8 @@
 /* Menus Styling */
 .modern-theme #settings-menu,
 .modern-theme #file-menu,
-.modern-theme #keywords-menu {
+.modern-theme #keywords-menu,
+.modern-theme #plugin-menu {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -166,14 +167,16 @@
 
 .modern-theme #settings-menu h3,
 .modern-theme #file-menu h3,
-.modern-theme #keywords-menu h3 {
+.modern-theme #keywords-menu h3,
+.modern-theme #plugin-menu h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .modern-theme #settings-menu button,
 .modern-theme #file-menu button,
-.modern-theme #keywords-menu button {
+.modern-theme #keywords-menu button,
+.modern-theme #plugin-menu button {
   padding: 10px 20px;
   margin: 10px 0;
   border: none;
@@ -185,7 +188,8 @@
 
 .modern-theme #settings-menu button:hover,
 .modern-theme #file-menu button:hover,
-.modern-theme #keywords-menu button:hover {
+.modern-theme #keywords-menu button:hover,
+.modern-theme #plugin-menu button:hover {
   background-color: #2b86c5;
   color: #ffffff;
 }
@@ -231,6 +235,7 @@
 /* Menu Common Styles */
 .modern-theme .menu {
   max-width: 1000px;
+  min-width: 200px;
   margin: auto;
   padding: 20px;
   background-color: #ffffff;
