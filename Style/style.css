@@ -66,6 +66,17 @@ body {
     z-index: 1000; 
 }
 
+#plugin-menu {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 5px;
+    z-index: 1000; 
+}
+
 #keywords-menu {
   position: fixed;
     top: 20%;
@@ -389,4 +400,20 @@ body {
 .highlight {
   background-color: yellow;
   font-weight: bold;
+}
+
+.plugin-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.plugin-name {
+  flex: 1;
+  font-size: 16px;
+}
+
+.plugin-toggle {
+  padding: 5px 10px;
+  cursor: pointer;
 }
