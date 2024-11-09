@@ -252,6 +252,19 @@ document.getElementById('keywords-button').addEventListener('click', function ()
     }
 });
 
+document.getElementById('pluginsopen-button').addEventListener('click', function () {
+    const pluginsMenu = document.getElementById('plugin-menu');
+    const overlay = document.getElementById('overlay');
+
+    if (pluginsMenu.style.display === 'none') {
+        pluginsMenu.style.display = 'block'; 
+        overlay.style.display = 'block';
+    } else {
+        pluginsMenu.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+});
+
 document.getElementById('save-file').addEventListener('click', function () {
  
   document.getElementById('file-menu').style.display = 'none';
@@ -261,6 +274,18 @@ document.getElementById('save-file').addEventListener('click', function () {
 
 document.getElementById('close-file').addEventListener('click', function () {
     document.getElementById('file-menu').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none'; 
+});
+
+document.getElementById('save-plugins').addEventListener('click', function () {
+ 
+  document.getElementById('plugin-menu').style.display = 'none';
+    overlay.style.display = 'none';
+});
+
+
+document.getElementById('close-plugins').addEventListener('click', function () {
+    document.getElementById('plugin-menu').style.display = 'none';
     document.getElementById('overlay').style.display = 'none'; 
 });
 
