@@ -112,7 +112,7 @@ function resetkeywords() {
 }
 
 function reseteditor() {
-  document.getElementById('editor').textContent = "type stuff here."
+  document.getElementById('editor').textContent = ""
   alert("editor's content have been Cleared!")
 }
 
@@ -517,7 +517,11 @@ const fullscreenBtn = document.getElementById('fullscreenBtn');
                 document.exitFullscreen();
             }
         });
+        
 
+
+  
+  
 
 let lastMouseX = 0;
   let lastMouseY = 0;
@@ -603,3 +607,4 @@ findNextBtn.addEventListener('click', () => {
 });
 replaceBtn.addEventListener('click', replaceText);
 replaceAllBtn.addEventListener('click', replaceAll);
+
