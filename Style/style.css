@@ -5,6 +5,7 @@ body {
 }
 
 /* Editor Container */
+
 #editor-container {
     width: 80%;
     max-width: 1200px;
@@ -402,7 +403,9 @@ body {
   font-weight: bold;
 }
 
-.plugin-item {
+.light-theme > .plugin-item,
+.dark-theme > .plugin-item,
+.darkred-theme > .plugin-item {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
