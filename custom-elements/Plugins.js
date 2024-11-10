@@ -1,4 +1,9 @@
-function loadScript(fileName) {
+async function loadScript(fileName) {
+  if (document.querySelector(`script[src="Plugins/${fileName}"]`)) {
+    console.log(`Script already loaded: ${fileName}`);
+    return;
+  }
+
   return new Promise((resolve, reject) => {
     const script = document.createElement("script");
     script.src = `Plugins/${fileName}`;
@@ -17,7 +22,6 @@ function loadScript(fileName) {
 async function fileExists(fileName) {
   try {
     const response = await fetch(`Plugins/${fileName}`);
-    // Check if the response is successful (status 200)
     return response.ok;
   } catch (error) {
     console.error(`Error checking file existence: ${fileName}`, error);
@@ -26,99 +30,86 @@ async function fileExists(fileName) {
 }
 
 function getEnabledPlugins() {
-  const enabledPlugins = localStorage.getItem("enabledPlugins");
-  return enabledPlugins ? JSON.parse(enabledPlugins) : {};
+  return JSON.parse(localStorage.getItem("enabledPlugins") || "{}");
 }
 
 function saveEnabledPlugins(enabledPlugins) {
   localStorage.setItem("enabledPlugins", JSON.stringify(enabledPlugins));
 }
 
-async function loadPlugins() {
-  try {
-    const response = await fetch("Plugins/pluginList.json");
-    const pluginList = await response.json();
-    const enabledPlugins = getEnabledPlugins();
+async function loadPlugins(pluginList) {
+  const enabledPlugins = getEnabledPlugins();
 
-    for (const [pluginName, fileName] of Object.entries(pluginList)) {
-      if (enabledPlugins[pluginName]) {
-        const exists = await fileExists(fileName);
-        if (!exists) {
-          console.warn(`Plugin file not found: ${fileName}. Disabling plugin: ${pluginName}`);
-          delete enabledPlugins[pluginName];
-          saveEnabledPlugins(enabledPlugins);
-          continue;
-        }
+  for (const [pluginName, fileName] of Object.entries(pluginList)) {
+    if (enabledPlugins[pluginName]) {
+      try {
+        await loadScript(fileName);
+      } catch (error) {
+        console.error(`Error loading plugin: ${pluginName}`, error);
+      }
+    }
+  }
+}
 
+async function createPluginControls(pluginList) {
+  const enabledPlugins = getEnabledPlugins();
+  const controlsContainer = document.getElementById("plugin-controls");
+  controlsContainer.innerHTML = "";
+
+  for (const [pluginName, fileName] of Object.entries(pluginList)) {
+    const exists = await fileExists(fileName);
+    if (!exists) {
+      console.warn(`Plugin file not found: ${fileName}. Skipping plugin: ${pluginName}`);
+      continue;
+    }
+
+    const pluginDiv = document.createElement("div");
+    pluginDiv.classList.add("plugin-item");
+
+    const label = document.createElement("span");
+    label.classList.add("plugin-name");
+    label.textContent = pluginName;
+
+    const toggleButton = document.createElement("button");
+    toggleButton.classList.add("plugin-toggle");
+    toggleButton.textContent = enabledPlugins[pluginName] ? "Disable" : "Enable";
+
+    toggleButton.addEventListener("click", async () => {
+      const isEnabled = enabledPlugins[pluginName];
+      enabledPlugins[pluginName] = !isEnabled;
+      saveEnabledPlugins(enabledPlugins);
+
+      if (!isEnabled) {
         try {
           await loadScript(fileName);
+          toggleButton.textContent = "Disable";
         } catch (error) {
           console.error(`Error loading plugin: ${pluginName}`, error);
+          enabledPlugins[pluginName] = false;
+          saveEnabledPlugins(enabledPlugins);
+          toggleButton.textContent = "Enable";
         }
+      } else {
+        console.log(`Unloading plugin: ${pluginName}. Reloading page...`);
+        location.reload();
       }
-    }
-  } catch (error) {
-    console.error("Error loading plugins:", error);
+    });
+
+    pluginDiv.appendChild(label);
+    pluginDiv.appendChild(toggleButton);
+    controlsContainer.appendChild(pluginDiv);
   }
 }
 
-// Function to create plugin controls UI
-async function createPluginControls() {
+async function initializePlugins() {
   try {
     const response = await fetch("Plugins/pluginList.json");
     const pluginList = await response.json();
-    const enabledPlugins = getEnabledPlugins();
-
-    const controlsContainer = document.getElementById("plugin-controls");
-    controlsContainer.innerHTML = "";
-
-    for (const [pluginName, fileName] of Object.entries(pluginList)) {
-      const exists = await fileExists(fileName);
-      if (!exists) {
-        console.warn(`Plugin file not found: ${fileName}. Skipping plugin: ${pluginName}`);
-        continue;
-      }
-
-      const pluginDiv = document.createElement("div");
-      pluginDiv.classList.add("plugin-item");
-
-      const label = document.createElement("span");
-      label.classList.add("plugin-name");
-      label.textContent = pluginName;
-
-      const toggleButton = document.createElement("button");
-      toggleButton.classList.add("plugin-toggle");
-      toggleButton.textContent = enabledPlugins[pluginName] ? "Disable" : "Enable";
-
-      // Toggle button click handler
-      toggleButton.addEventListener("click", async () => {
-        const fileExistsCheck = await fileExists(fileName);
-        if (!fileExistsCheck) {
-          console.error(`Cannot enable plugin: ${fileName} does not exist.`);
-          delete enabledPlugins[pluginName];
-          saveEnabledPlugins(enabledPlugins);
-          toggleButton.textContent = "Enable";
-          return;
-        }
-
-        enabledPlugins[pluginName] = !enabledPlugins[pluginName];
-        saveEnabledPlugins(enabledPlugins);
-        toggleButton.textContent = enabledPlugins[pluginName] ? "Disable" : "Enable";
-
-        // Update the UI without full page reload
-        createPluginControls();
-      });
-
-      pluginDiv.appendChild(label);
-      pluginDiv.appendChild(toggleButton);
-      controlsContainer.appendChild(pluginDiv);
-    }
+    await createPluginControls(pluginList);
+    await loadPlugins(pluginList);
   } catch (error) {
-    console.error("Error creating plugin controls:", error);
+    console.error("Error initializing plugins:", error);
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  createPluginControls();
-  loadPlugins();
-});
+document.addEventListener("DOMContentLoaded", initializePlugins);
