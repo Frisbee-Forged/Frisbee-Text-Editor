@@ -18,11 +18,11 @@ function updatetitle(currentVersion) {
  subtitle = document.getElementById('subtitle')
   
   document.title = "Frisbee " + currentVersion;
-  subtitle.textContent = "Text Editor " + currentVersion;
+  subtitle.textContent = subtitle.textContent + currentVersion;
  
 }
 
 
-const currentVersion = "0.1.5c";
+const currentVersion = "0.1.";
 updatetitle(currentVersion);
 checkForUpdates(currentVersion);
