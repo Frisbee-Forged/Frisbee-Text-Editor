@@ -411,6 +411,18 @@ body {
   margin-bottom: 10px;
 }
 
+#plugin-controls {
+  width: 100%;
+  max-height: 400px; /* Adjust the max height as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Show scrollbar only on hover */
+#plugin-controls:hover {
+  overflow-y: auto;
+}
+
 .plugin-name {
   flex: 1;
   font-size: 16px;
