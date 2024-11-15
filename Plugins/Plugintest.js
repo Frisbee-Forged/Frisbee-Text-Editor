@@ -1,1 +1,0 @@
-window.onload = console.log("wowie! the plugin works!")
