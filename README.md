@@ -10,6 +10,10 @@ please dont use it. i am might update it or something but idk
 also dont use my code its fucking shit.
 
 
+# NEW GITHUB PAGE!
+new on the web version!
+https://totallyreliabledino.github.io/Frisbee-Text-Editor/
+not all devices supported
 
 # Updates section :
 
