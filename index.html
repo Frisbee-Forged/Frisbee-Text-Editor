@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="Style/halloween-theme.css">
   
 </head>
-<body class="light-theme"> <!-- Default to light theme -->
+<body class="modern-theme">
 <div id="title">FRISBEE</div>
-<div id ="subtitle">Text Editor </div>
+<div id ="subtitle">Text Editor</div>
  <nav id="navbar">
    <ul>
      <li><a id="settings-button">Settings</a></li>
@@ -81,9 +81,7 @@
     <select id="theme-select"> 
       <option value="light">Light</option>
       <option value="dark">Dark</option>
-      <option value="darkred">Reddish</option>
       <option value="modern">modern (wip)</option>
-      <option value="retro">retro (wip) </option>
       <option value="halloween">Halloween (wip)</option>
 </select>
     <br>
@@ -146,14 +144,22 @@
 
 <div id="plugin-menu" class="menu" style="display: none;">
   <h1>Plugins</h1>
-<div id="plugin-controls" ></div>
+  <h3>
+    No Plugins Available
+  </h3>
+  <br>
+  <pr>
+    Currently Plugins Are Not available for github Pages!
+    If you want Plugins. you can try the Downloading The Source Code of frisbee!
+  </pr>
+  <i class="fa-regular fa-face-frown fa-xl" style="color: #a8a8a8; margin: 10px;"></i>
+  </br>
 <br>
 <button id="save-plugins">Save</button>
     <button id="close-plugins">Close</button>
     </br>
 </div>
   <!-- my basement of libraries...-->
-  <script src="custom-elements/Plugins.js"> </script>
   <script src="custom-elements/update.js"></script>
   <script src="custom-elements/codeblock.js"></script>
   <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
