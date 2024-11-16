@@ -2,27 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Frisbee</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0s7gPTf6T5oO6ZC49E/eU9wUpmNh6Lufc6xZT" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Style/style.css">
-  <link rel="stylesheet" href="Style/retro-theme.css">
   <link rel="stylesheet" href="Style/modern-theme.css">
-  <link rel="stylesheet" href="Style/halloween-theme.css">
+    <link rel="stylesheet" href="Style/style.css">
   
 </head>
-<body class="modern-theme">
+<body class="light-theme"> <!-- Default to light theme -->
 <div id="title">FRISBEE</div>
-<div id ="subtitle">Text Editor</div>
+<div id ="subtitle">text editor</div>
  <nav id="navbar">
    <ul>
      <li><a id="settings-button">Settings</a></li>
      <li><a id="keywords-button">Keywords</a></li>
      <li><a id="file-button">File</a></li>
      <li><a id="pluginsopen-button">Plugins</a></li>
-     <li><a id="help-button" href="https://youtu.be/dQw4w9WgXcQ?si=muRr0POn6dkX-Wsk">Help</a></li>
+     <li><a href="https://youtu.be/dQw4w9WgXcQ?si=muRr0POn6dkX-Wsk">Help</a></li>
    </ul>
  </nav>
  <nav id="saving-pop">
@@ -81,7 +78,9 @@
     <select id="theme-select"> 
       <option value="light">Light</option>
       <option value="dark">Dark</option>
+      <option value="darkred">Reddish</option>
       <option value="modern">modern (wip)</option>
+      <option value="retro">retro (wip) </option>
       <option value="halloween">Halloween (wip)</option>
 </select>
     <br>
@@ -144,22 +143,17 @@
 
 <div id="plugin-menu" class="menu" style="display: none;">
   <h1>Plugins</h1>
-  <h3>
-    No Plugins Available
-  </h3>
-  <br>
-  <pr>
-    Currently Plugins Are Not available for github Pages!
-    If you want Plugins. you can try the Downloading The Source Code of frisbee!
-  </pr>
-  <i class="fa-regular fa-face-frown fa-xl" style="color: #a8a8a8; margin: 10px;"></i>
-  </br>
+<div id="plugin-controls" >
+  
+  
+</div>
 <br>
 <button id="save-plugins">Save</button>
     <button id="close-plugins">Close</button>
     </br>
 </div>
   <!-- my basement of libraries...-->
+  <script src="custom-elements/Plugins.js"> </script>
   <script src="custom-elements/update.js"></script>
   <script src="custom-elements/codeblock.js"></script>
   <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
