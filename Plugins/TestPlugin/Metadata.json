@@ -1,8 +1,0 @@
-{
-  "name": "Test Plugin",
-  "version": "1.0.0",
-  "description": "Test Plugin/Example Template",
-  "main": "main.js",
-  "author": "YourName",
-  "url": "Plugins/TestPlugin/"
-}
