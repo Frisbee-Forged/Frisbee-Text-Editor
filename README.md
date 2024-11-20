@@ -1,4 +1,4 @@
-# THIS PROJECT IS OBSOLETE 
+# THIS PROJECT IS OBSOLETE/DISCONTINUED
 this project was a such a cool thing to work on, I had a lot of fun in it, I enjoyed learning javascript but everything comes to end. I have gotten bored of frisbee and probably will start working on something else
 
 I have made what I think is the needed features to add in. and now I am gonna be
