@@ -1,3 +1,12 @@
+# THIS PROJECT IS OBSOLETE 
+this project was a such a cool thing to work on, I had a lot of fun in it, I enjoyed learning javascript but everything comes to end. I have gotten bored of frisbee and probably will start working on something else
+
+I have made what I think is the needed features to add in. and now I am gonna be
+out, no more updates, no more new stuff.
+
+
+## DESCRIPTION
+
 # frisbee : The Sigma Text Editor
 
 i made this text editor in like, 48 hours or something, as like a way to improve my javascript, html and css
